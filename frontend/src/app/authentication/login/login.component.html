@@ -1,16 +1,22 @@
+<div class="formMain">
+  <label class="header">Login</label>
 <form class="login-form" [formGroup]="loginForm">
   <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="mail">
+    <label class="label" for="email">Email</label>
+    <br />
+    <input class="inputField" type="email" id="email" formControlName="mail">
   </div>
 
   <div>
-   <label for="password">Password</label>
-   <input type="password" id="password" formControlName="password">
+   <label class="label" for="password">Password</label>
+    <br />
+   <input class="inputField" type="password" id="password" formControlName="password">
   </div>
 
-  <button type="submit">Login</button>
+  <button class="btSubmit" type="submit">Login</button>
 </form>
 
+  <label class="btRedirect" (click)="redirectTo('register')">Не зарегестрированы? Регистрация!</label>
+</div>
 
-<span (click)="redirectTo('register')">Не зарегестрированы? Регистрация!</span>
+

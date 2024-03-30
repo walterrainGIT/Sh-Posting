@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LentComponent } from './components/lent.component';
+import { LentComponent } from './lent/lent.component';
+import {CreatePostComponent} from "./createPost/createPost.component";
 
 
 
 @NgModule({
   declarations: [
-    LentComponent
+    LentComponent,
+    CreatePostComponent
   ],
   imports: [
     CommonModule
