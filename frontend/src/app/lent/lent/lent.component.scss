@@ -1,0 +1,96 @@
+.footer {
+  margin-right: 1%;
+  margin-left: 1%;
+  display: flex;
+  flex-direction: row;
+
+  .titleCategory {
+    .header {
+      font-family: Inter, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: -0.6px;
+      color: #1F2937;
+    }
+
+    .descriptionFilter {
+      font-family: Inter, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #6B7280;
+      margin-top: 1%;
+      display: inline-block;
+    }
+
+    .listFilters {
+      font-family: Inter, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      width: 200px;
+      padding: 10px;
+      margin: 0 auto;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .btRedirect {
+    margin-left: auto;
+    margin-right: 0;
+    height: 20px;
+    width: 100px;
+    background-color: navajowhite;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
+
+.containerPosts {
+  margin-top: 2%;
+  display: inline-table;
+  overflow: hidden;
+  text-align: center;
+
+  .post {
+    display: inline-block;
+    list-style: none;
+    vertical-align: top;
+    text-align: left;
+    background: rgb(229, 231, 235);
+    border:1px solid;
+    border-radius: 8px;
+    min-width: 10%;
+    max-width: 15%;
+    min-height: 5%;
+    max-height: 10%;
+    margin: 1%;
+    padding: 1%;
+    overflow: hidden;
+
+    .username {
+        font-family: Inter, serif;
+        font-size: 20px;
+    }
+
+    .createDate {
+        font-family: Inter, serif;
+        font-size: 12px;
+        color: #6B7280;
+    }
+
+
+    .content {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* number of lines to show */
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

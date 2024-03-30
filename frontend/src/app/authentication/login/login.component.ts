@@ -19,7 +19,9 @@ export class LoginComponent {
   }
 
   public loginForm = this._fb.group({
-    mail: ['user@example.com', [ Validators.required, checkRegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) ]],
-    password: ['Enter your password', [ Validators.required, conformPassword ]],
+    mail: ['user@example.com', [ checkRegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g) ]],
+    password: ['Enter your password'],
+  }, {
+    validators: [ Validators.required ]
   });
 }

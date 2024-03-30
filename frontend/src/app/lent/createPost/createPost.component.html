@@ -1,1 +1,34 @@
-<p>creating-post works!</p>
+<div class="formMain">
+  <label class="header">Create a Post</label>
+  <form class="login-form" [formGroup]="createPostForm">
+    <div>
+      <label class="label" for="title">Title</label>
+      <br />
+      <input class="inputField" type="text" id="title" formControlName="title">
+    </div>
+
+    <div>
+      <label class="label" for="content">Content</label>
+      <br />
+      <input class="inputField content" type="text" id="content" formControlName="content">
+    </div>
+
+    <div>
+      <label class="descriptionFilter" for="postsType">Filter by category to see all <br /> user posts during Lent.</label>
+      <br />
+      <select class="listFilters" name="postsType" id="postsType">
+        <option value="technology">Technology</option>
+        <option value="drive">Drive</option>
+        <option value="news">News</option>
+      </select>
+    </div>
+
+    <button class="btSubmit" type="submit">Publish</button>
+  </form>
+
+  <label class="btRedirect" (click)="redirectTo('')">Cancel</label>
+</div>
+
+
+
+

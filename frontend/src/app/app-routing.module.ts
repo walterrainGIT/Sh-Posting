@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'lent',
-    component: LentComponent,
+    loadChildren: () => import('./lent/lent.module').then((m) => m.LentModule),
   },
   {
     path: '**',

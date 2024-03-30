@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LentComponent,
   },
   {
-    path: '',
+    path: 'createPost',
     component: CreatePostComponent,
   },
 ];
@@ -19,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class CreatingPostRouting { }
+export class LentRouting { }
