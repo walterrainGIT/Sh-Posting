@@ -4,15 +4,19 @@ import { AppService } from './app.service';
 import {ConfigModule, ConfigService} from "@nestjs/config";
 import { SequelizeModule } from "@nestjs/sequelize";
 import configurations from "../../configurations";
+import {UserModule} from "../user/user.module";
+import {AuthenticationModule} from "../authentication/authentication.module";
+import {User} from "../user/models/user.model";
+import {PostModule} from "../post/post.module";
 
 @Module({
   imports: [
-    /*Настройки приложения через файл configurations/index.ts*/
+    /*Настройки приложения через файл configurations/user.model.ts*/
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configurations]
     }),
-    /*Настройки базы данных из файла configurations/index.ts*/
+    /*Настройки базы данных из файла configurations/user.model.ts*/
     SequelizeModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -25,12 +29,15 @@ import configurations from "../../configurations";
         database: configService.get("dbName"),
         synchronize: true,
         autoLoadModels: true,
-        modules: [],//перечисление моделей таблиц для создания в БД
+        modules: [
+            User,
+        ],//перечисление моделей таблиц для создания в БД
       })
     }),
     /*Подключение модулей*/
-      //User,
-      //Posts,
+    UserModule,
+    AuthenticationModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
