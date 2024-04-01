@@ -3,7 +3,7 @@ import {ApiProperty} from "@nestjs/swagger";
 import {Column} from "sequelize-typescript";
 
 /*Валидация данных, чтобы типы для записи в базу данных были правильные*/
-export class CreatePostDTO {
+export class DataPostDTO {
     @ApiProperty()
     @IsString()
     category: string
@@ -15,28 +15,43 @@ export class CreatePostDTO {
     @ApiProperty()
     @Column
     content: string
+}
+
+export class PostIdDTO {
+    @ApiProperty()
+    @IsString()
+    postId: string
+}
+
+export class CreatorIdDTO {
+    @ApiProperty()
+    @IsString()
+    creatorId: string
 }
 
 export class UpdatePostDTO {
     @ApiProperty()
-    @IsString()
-    postId: string
+    postId: PostIdDTO
 
     @ApiProperty()
-    @IsString()
+    postData: DataPostDTO
+}
+
+export class CertainNumDTO {
+    @ApiProperty()
+    offset: string
+
+    @ApiProperty()
+    limit: string
+}
+
+export class FiltersDTO {
+    @ApiProperty()
     category: string
 
     @ApiProperty()
-    @IsString()
-    title: string
+    dateStart: string
 
     @ApiProperty()
-    @Column
-    content: string
-}
-
-export class DeletePostDTO {
-    @ApiProperty()
-    @IsString()
-    postId: string
+    dateEnd: string
 }
